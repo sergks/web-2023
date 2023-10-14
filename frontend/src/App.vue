@@ -1,13 +1,7 @@
 <template>
-  <Header></Header>
-
-  <main>
-    <section class="container">
-      <router-view/>
-    </section>
-  </main>
-
-  <Footer></Footer>
+  <component :is="layout">
+    <router-view/>
+  </component>
 
 </template>
 
@@ -18,9 +12,15 @@
 <script>
 import Header from "@/components/App/Header.vue";
 import Footer from "@/components/App/Footer.vue";
+import DefaultLayout from "@/layouts/DefaultLayout.vue";
 
 export default {
-  components: {Footer, Header}
+  components: {Footer, Header},
+  computed: {
+    layout() {
+      return this.$route.meta.layout || DefaultLayout
+    }
+  }
 }
 
 </script>

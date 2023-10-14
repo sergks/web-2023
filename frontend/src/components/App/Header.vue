@@ -1,6 +1,9 @@
 <script>
+import Cart from "@/components/App/Cart.vue";
+
 export default {
-  name: "Header"
+  name: "Header",
+  components: {Cart}
 }
 </script>
 
@@ -26,13 +29,14 @@ export default {
             <li class="nav-item">
               <router-link class="nav-link" to="/about">О нас</router-link>
             </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/login">Войти</router-link>
+            </li>
           </ul>
         </div>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <img class="cart" src="img/cart.svg" />
-            </a>
+            <Cart />
           </li>
         </ul>
       </div>

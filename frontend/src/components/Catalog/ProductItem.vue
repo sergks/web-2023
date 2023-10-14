@@ -11,7 +11,7 @@
     },
     methods: {
       addToCart() {
-        alert("Success " + this.product.id)
+        this.$store.commit('addToCart', this.product)
       }
     }
   }
