@@ -17,7 +17,7 @@ export default {
 
     <main>
       <slider></slider>
-      <section class="container">
+      <section class="container mt-4">
         <slot />
       </section>
     </main>

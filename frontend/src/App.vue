@@ -24,3 +24,9 @@ export default {
 }
 
 </script>
+
+<style>
+  .card {
+    border: none;
+  }
+</style>

@@ -6,6 +6,7 @@ import ProductView from "@/views/ProductView.vue";
 import LoginLayout from "@/layouts/LoginLayout.vue";
 import AboutView from "@/views/AboutView.vue";
 import LoginView from "@/views/LoginView.vue";
+import CartView from "@/views/CartView.vue";
 
 const routes = [
   {
@@ -40,7 +41,12 @@ const routes = [
     meta: {
       layout: LoginLayout
     }
-  }
+  },
+  {
+    path: '/cart',
+    name: 'cart',
+    component: CartView
+  },
 ]
 
 const router = createRouter({

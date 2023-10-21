@@ -1,5 +1,5 @@
 <script>
-import Cart from "@/components/App/Cart.vue";
+import Cart from "@/components/Cart/Cart.vue";
 
 export default {
   name: "Header",

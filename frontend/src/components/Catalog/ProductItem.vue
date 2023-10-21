@@ -1,7 +1,10 @@
 <script>
 
+  import CartButton from "@/components/Catalog/CartButton.vue";
+
   export default {
     name: "ProductItem",
+    components: {CartButton},
     props: {
       product: {
         id: Number,
@@ -30,7 +33,7 @@
         </h2>
         <div>Цена: {{ product.price }}</div>
         <div class="mt-4">
-          <button type="button" class="btn btn-warning w-100" @click="addToCart">Заказать</button>
+          <cart-button class="w-100" :productId="product.id" />
         </div>
       </div>
     </div>

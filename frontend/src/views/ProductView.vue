@@ -16,7 +16,6 @@ export default {
 </script>
 
 <template>
-  <h1>{{id}}</h1>
   <ProductCard />
 </template>
 

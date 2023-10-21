@@ -5,14 +5,14 @@ export default {
 </script>
 
 <template>
-  <a class="nav-link" href="#">
+  <router-link class="nav-link" :to="{name: 'cart'}">
     <span class="cart-container">
       <img class="cart" src="img/cart.svg" />
       <span class="badge bg-danger" v-if="this.$store.getters.getCartCount > 0">
         {{ this.$store.getters.getCartCount }}
       </span>
     </span>
-  </a>
+  </router-link>
 </template>
 
 <style scoped>
