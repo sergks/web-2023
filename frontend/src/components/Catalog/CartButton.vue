@@ -11,7 +11,7 @@ export default {
 </script>
 
 <template>
-  <button type="button" class="btn btn-warning" @click="addToCart()">Заказать</button>
+  <button type="button" class="btn btn-warning" @click="addToCart()" disabled>Заказать</button>
 </template>
 
 <style scoped>
