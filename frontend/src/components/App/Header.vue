@@ -3,7 +3,12 @@ import Cart from "@/components/Cart/Cart.vue";
 
 export default {
   name: "Header",
-  components: {Cart}
+  components: {Cart},
+  computed: {
+      isAuth() {
+          return this.$store.getters.isAuth
+      }
+  }
 }
 </script>
 
@@ -29,9 +34,12 @@ export default {
             <li class="nav-item">
               <router-link class="nav-link" to="/about">О нас</router-link>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" v-if="!isAuth">
               <router-link class="nav-link" to="/login">Войти</router-link>
             </li>
+              <li class="nav-item" v-else>
+                  <router-link class="nav-link" to="/logout">Выйти</router-link>
+              </li>
           </ul>
         </div>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">

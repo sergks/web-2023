@@ -11,11 +11,6 @@
         name: String,
         price: Number
       }
-    },
-    methods: {
-      addToCart() {
-        this.$store.commit('addToCart', this.product)
-      }
     }
   }
 

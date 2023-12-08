@@ -8,35 +8,23 @@
 
 import ProductItem from "@/components/Catalog/ProductItem.vue";
 import Slider from "@/components/App/Slider.vue";
+import axios from "axios";
 
 export default {
   name: 'HomeView',
   components: {Slider, ProductItem},
   data() {
     return {
-      items: [
-        {
-          id: 1,
-          name: 'Audi A7',
-          price: 6000000
-        },
-        {
-          id: 2,
-          name: 'Audi A8',
-          price: 8000500
-        },
-        {
-          id: 1,
-          name: 'Audi A7',
-          price: 6000000
-        },
-        {
-          id: 2,
-          name: 'Audi A8',
-          price: 8000500
-        }
-      ]
+      items: []
     }
+  },
+  created() {
+      axios.get('http://localhost/api/products/top', {
+          headers: {
+              Authorization: 'Bearer ' + localStorage.getItem('user')
+          }
+      })
+          .then((response) => this.items = response.data)
   }
 }
 </script>

@@ -1,4 +1,7 @@
 <script>
+import axios from "axios";
+import router from "@/router";
+
 export default {
   name: "LoginView",
   data() {
@@ -23,7 +26,13 @@ export default {
       }
 
       if (!this.loginError && !this.passwordError) {
-        alert('Запрос')
+        axios.post('http://localhost/api/login', {email: this.login, password: this.password})
+            .then((response) => {
+                localStorage.setItem('user', response.data.token)
+                this.$store.commit('setToken', response.data.token)
+                router.push({name: 'home'})
+            })
+            .catch((errors) => this.loginError = errors.response.data.message)
       }
     }
   }

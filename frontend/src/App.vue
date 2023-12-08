@@ -20,6 +20,9 @@ export default {
     layout() {
       return this.$route.meta.layout || DefaultLayout
     }
+  },
+  created() {
+      this.$store.commit('setToken', localStorage.getItem('user'))
   }
 }
 

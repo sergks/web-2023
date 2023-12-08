@@ -10,10 +10,17 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class ProductController extends Controller
 {
-    public function list(): Collection
+    public function top(): Collection
     {
         return Product::query()
             ->orderBy('created_at', 'desc')
+            ->limit(4)
+            ->get();
+    }
+
+    public function list(): Collection
+    {
+        return Product::query()
             ->get();
     }
 
